@@ -5,48 +5,79 @@
       <title>Animaux</title>
       <link rel="stylesheet" href="materialize/css/materialize.css">
       <link rel="stylesheet" href="materialize/css/materialize.min.css">
+      <link rel="stylesheet" href="Style.css">
+
   </head>
   <body>
-<script type="text/javascript" src="materialize/js/materialize.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Parcourir le monde : Animaux</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="sass.html">Logo</a></li>
-          </ul>
-        </div>
-    </nav>
+       <nav>
+         <div class="nav-wrapper">
+         <a href="#" class="brand-logo center">PARCOURIR LE MONDE : ANIMAUX</a>
+         <ul id="nav-mobile" class="left hide-on-med-and-down">
+           <li><a href="sass.html">Sass</a></li>
+         </ul>
+       </div>
+        </nav>
 
-    <ul id="slide-out" class="side-nav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <div id="aside">
+          <div class="row" >
+            <div class="col l12">
+              <aside class="">
+                  <br  />
+                  <br  />
+                  <div class="">
+                    <div class="col l3">
+                      <a class="waves-effect waves-light btn-large">EUROPE</a>
+                    </div>
 
-  <script type="text/javascript">
+                    <div class="col l3">
+                    <a class="waves-effect waves-light btn-large">ASIE</a>
+                    </div>
+
+                    <div class="col l3">
+                      <a class="waves-effect waves-light btn-large">AFRIQUE</a>
+                    </div>
+
+                    <div class="col l3">
+                    <a class="waves-effect waves-light btn-large">OCEANIE</a>
+                    </div>
+                  </div>
+              </div>
+
+              <br  />
+              <br  />
+              <div class="row" >
+                <div class="col l12">
+                  <aside class="">
+                      <br  />
+                      <br  />
+                      <div class="">
+                        <div class="col l3">
+                          <a class="waves-effect waves-light btn-large">AMERIQUE DU NORD</a>
+                        </div>
+
+                        <div class="col l3">
+                        <a class="waves-effect waves-light btn-large">AMERIQUE DU SUD</a>
+                        </div>
+
+                        <div class="col l3">
+                          <a class="waves-effect waves-light btn-large">ANTARTIQUE</a>
+                        </div>
+
+                        <div class="col l3">
+                        <a class="waves-effect waves-light btn-large">ARTIQUE</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
 
 
-  (function($){
-  $(function(){
-
-    $('.button-collapse').sideNav();
-
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
-  </script>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+      <script>
+       $(".button-collapse").sideNav();
+      </script>
 
   </body>
 </html>
