@@ -68,6 +68,13 @@
           </div>
       </div>
 
+      <div class="col l12">
+        <ul id="liste">
+          <li></li>
+        </ul>
+
+      </div>
+
               <footer class="page-footer">
                 <div class="container">
                   <div class="row">
@@ -101,6 +108,19 @@
       <script>
        $(".button-collapse").sideNav();
       </script>
+
+      <!-- PERMET D4AFFICHER LA LISTE DES PERSONNAGES -->
+  		<script>
+
+  			$(document).ready(function()
+  			{
+    				$.get( "http://api.gbif.org/v1/occurrence/1580459505", function(data)
+  				{
+  						 $("#liste").append($("<li>").text(data.genericName));
+    			})
+  			});
+
+  		</script>
 
   </body>
 </html>
