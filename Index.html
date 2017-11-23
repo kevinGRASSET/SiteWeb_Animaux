@@ -12,7 +12,7 @@
 
       <nav>
          <div class="nav-wrapper">
-           <a href="#" class="brand-logo center">PARCOURIR LE MONDE : ANIMAUX</a>
+           <a href="#" class="brand-logo center">ANIMAP</a>
            <ul id="nav-mobile" class="left hide-on-med-and-down">
              <li><a href="sass.html">Sass</a></li>
            </ul>
@@ -57,10 +57,10 @@
                     <a class="waves-effect waves-light btn-large">AMERIQUE DU SUD</a>
                   </div>
                   <div class="col l3">
-                    <a class="waves-effect waves-light btn-large">ANTARTIQUE</a>
+                    <a class="waves-effect waves-light btn-large">ANTARCTIQUE</a>
                   </div>
                   <div class="col l3">
-                    <a class="waves-effect waves-light btn-large">ARTIQUE</a>
+                    <a class="waves-effect waves-light btn-large">ARCTIQUE</a>
                   </div>
 
                 </aside>
@@ -68,14 +68,21 @@
           </div>
       </div>
 
-      <div class="col l12">
-        <ul id="liste">
-          <li></li>
-        </ul>
 
+      <div class="row" id="lol">
+        <div class="col l12">
+          <ul>
+              <li id="liste"></li>
+          </ul>
+        </div>
       </div>
 
-              <footer class="page-footer">
+
+
+
+
+
+              <!-- <footer class="page-footer">
                 <div class="container">
                   <div class="row">
                     <div class="col l6 s12">
@@ -99,7 +106,7 @@
                   <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
                   </div>
                 </div>
-              </footer>
+              </footer>-->
 
 
       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -109,18 +116,26 @@
        $(".button-collapse").sideNav();
       </script>
 
-      <!-- PERMET D4AFFICHER LA LISTE DES PERSONNAGES -->
-  		<script>
 
-  			$(document).ready(function()
-  			{
-    				$.get( "http://api.gbif.org/v1/occurrence/1580459505", function(data)
-  				{
-  						 $("#liste").append($("<li>").text(data.genericName));
-    			})
-  			});
 
-  		</script>
+
+      <script>
+      $(document).ready(function()
+      {
+          $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(data)
+        {
+          $.each(data, function(key, val)
+          {
+             $("#liste").append($("<li>").text(val.name));
+
+
+          })
+
+
+        })
+      });
+
+      </script>
 
   </body>
 </html>
