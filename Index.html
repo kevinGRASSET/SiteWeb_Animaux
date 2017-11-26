@@ -69,16 +69,21 @@
       </div>
 
 
+
+
+
+
+
+
+
+
       <div class="row" id="lol">
         <div class="col l12">
-          <ul>
-              <li id="liste"></li>
+          <ul id="liste2">
+              
           </ul>
         </div>
       </div>
-
-
-
 
 
 
@@ -110,7 +115,6 @@
 
 
       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-      <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
       <script>
        $(".button-collapse").sideNav();
@@ -122,20 +126,19 @@
       <script>
       $(document).ready(function()
       {
+        
+
           $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(data)
         {
+          var i = 2;
           $.each(data, function(key, val)
           {
-             $("#liste").append($("<li>").text(val.name));
-
-
+             $("#liste2").append("<li> <a href=  index"+i+".html>"+val.name+"</a></li>");
+             i++;
           })
-
-
         })
       });
 
       </script>
-
   </body>
 </html>
