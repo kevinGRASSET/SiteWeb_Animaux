@@ -71,17 +71,14 @@
       <div class="row" id="lol">
         <div class="col l12">
           
-
-         
-              
+          
          
         </div>
       </div>
 
-
-    
-    <div class="card horizontal"><div class="card-stacked"><div class="card-content"><p>I am</p></div><div class="card-action"><a href="#">This is a link</a></div></div></div></div>
-
+      <ul id="pays">
+            
+      </ul>
 
 
 
@@ -135,7 +132,7 @@
           var i = 2;
           $.each(data, function(key, val)
           {
-             $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action><a href=#>This is a link</a></div></div></div></div>");
+             $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><a href=#>This is a link</a></div></div></div></div>");
              i++;
           })
         })
@@ -143,6 +140,23 @@
 
       
 
+      </script>
+
+      <script>
+      $(document).ready(function()
+      {
+        
+
+          $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AX", function(data)
+        {
+          var i = 2;
+          $.each(data, function(key, val)
+          {
+             $("#pays").append("<li>"+key.results[key]+"</li>");
+             i++;
+          })
+        })
+      });
       </script>
   </body>
 </html>
