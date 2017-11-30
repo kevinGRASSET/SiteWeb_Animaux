@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="row">
-     
+
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
           <li class="tab"><a href="#test1" class="center">EUROPE</a></li>
@@ -47,7 +47,7 @@
           <li class="tab disabled"><a href="#t"></a></li>
           <li class="tab disabled"><a href="#t"></a></li>
           <li class="tab disabled"><a href="#t"></a></li>
-          
+
           <li class="tab "><a href="#test5">AMERIQUE DU NORD</a></li>
           <li class="tab disabled"><a href="#t"></a></li>
           <li class="tab "><a href="#test6">AMERIQUE DU SUD</a></li>
@@ -58,7 +58,7 @@
 
         </ul>
       </div>
-    
+
     </div>
     </nav>
     <div id="test1" class="col s12">Test 1</div>
@@ -70,19 +70,17 @@
 
       <div class="row" id="lol">
         <div class="col l12">
-          
-          
-         
+
+
+
         </div>
       </div>
 
-      <ul id="pays">
-            
-      </ul>
 
 
 
- 
+
+
 
 
 
@@ -125,44 +123,61 @@
       <script>
       $(document).ready(function()
       {
-        
-
-          $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(data)
+          $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
         {
           var i = 2;
-          $.each(data, function(key, val)
+          $.each(json, function(key, val)
           {
-             $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><a href=#>This is a link</a></div></div></div></div>");
-             i++;
+                $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");
+                i++;
           })
         })
       });
 
-      
+
 
       </script>
 
       <script>
       $(document).ready(function()
       {
-        
 
-          $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AX", function(data)
+
+        $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AX", function(json)
         {
           var i = 2;
-          $.each(data, function(key, val)
+          $.each(json, function (key, data)
           {
-             $("#pays").append("<li>"+key.results[key]+"</li>");
-             i++;
+
+              $.each(data, function (index, data)
+              {
+
+                  $("#"+i+"").append("<a>"+data.scientificName+"</a>");
+
+              })
           })
+
+
+        })
+
+
+        $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AT", function(json)
+        {
+          var i = 3;
+          $.each(json, function (key, data)
+          {
+
+              $.each(data, function (index, data)
+              {
+
+                  $("#"+i+"").append("<a>"+data.scientificName+"</a>");
+
+              })
+          })
+
+
         })
       });
       </script>
   </body>
 </html>
-
-
-
-
-
-
