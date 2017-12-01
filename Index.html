@@ -61,20 +61,25 @@
 
     </div>
     </nav>
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="col s12">Test 2</div>
-    <div id="test3" class="col s12">Test 3</div>
-    <div id="test4" class="col s12">Test 4</div>
 
-
-
-      <div class="row" id="lol">
+    <div id="test1" class="col s12">
+     <div class="row" id="lol">
         <div class="col l12">
 
 
 
         </div>
       </div>
+    </div>
+
+
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+
+
+
+     
 
 
 
@@ -113,6 +118,9 @@
 
       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+
+
       <script>
        $(".button-collapse").sideNav();
       </script>
@@ -124,60 +132,35 @@
       $(document).ready(function()
       {
           $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
-        {
-          var i = 2;
-          $.each(json, function(key, val)
           {
+            var i = 2;
+            $.each(json, function(key, val)
+            {
                 $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");
                 i++;
+            })
           })
-        })
+
+          
+
+           $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
+          {
+            var i = 2;
+            $.each(json, function(key, val)
+            {
+                $("#lol").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");
+                i++;
+            })
+          })
       });
 
 
 
       </script>
 
-      <script>
-      $(document).ready(function()
-      {
 
+      <script src="Script2.js"></script>
 
-        $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AX", function(json)
-        {
-          var i = 2;
-          $.each(json, function (key, data)
-          {
-
-              $.each(data, function (index, data)
-              {
-
-                  $("#"+i+"").append("<a>"+data.scientificName+"</a>");
-
-              })
-          })
-
-
-        })
-
-
-        $.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country=AT", function(json)
-        {
-          var i = 3;
-          $.each(json, function (key, data)
-          {
-
-              $.each(data, function (index, data)
-              {
-
-                  $("#"+i+"").append("<a>"+data.scientificName+"</a>");
-
-              })
-          })
-
-
-        })
-      });
-      </script>
+     
   </body>
 </html>
