@@ -121,12 +121,12 @@
       $(document).ready(function()
       {
           var i = 0;
-           $.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
+           $.get( "https://restcountries.eu/rest/v2/region/Asia", function(json)
             {
             
             $.each(json, function(key, val)
             {
-                $("#eur").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");i++;   
+                $("#asia").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");i++;   
             })         
           })
         
