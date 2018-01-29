@@ -2,12 +2,9 @@ var tabEurope = new Array ();
 var tabasia = new Array ();
 var tabafrique = new Array ();
 var taboceania = new Array ();
+var tabamerica = new Array ();
 
 var m = 0;
-
-
- 
-
 
 		$.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
             {
@@ -83,6 +80,25 @@ var m = 0;
 	        TabOceania();
 
 	        console.log(taboceania.length);
+
+          	});
+
+		$.get( "https://restcountries.eu/rest/v2/region/Americas", function(json)
+            {
+            	
+            
+	            $.each(json, function(key, val)
+	            {
+	            	
+	               tabamerica[m] = ""+val.alpha2Code+"";
+	               m++;
+	            	
+	            	
+	            })
+
+	        TabAmerica();
+
+	        console.log(tabamerica.length);
 
           	});
 
@@ -179,7 +195,7 @@ function TabOceania(k) {
 
 	for (var i = 0; i < taboceania.length; i++) 
 	{
-  		$.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country="+tabafrique[i]+"", function(json)
+  		$.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country="+taboceania[i]+"", function(json)
 	  	{ 
 	  		
 	      $.each(json, function (key, data)
@@ -196,6 +212,31 @@ function TabOceania(k) {
 	      
 
 
+	      
+	  	})
+	}};
+
+function TabAmerica(k) {
+
+	var l = 171;
+
+
+	for (var i = 0; i < tabamerica.length; i++) 
+	{
+  		$.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country="+tabamerica[i]+"", function(json)
+	  	{ 
+	  		
+	      $.each(json, function (key, data)
+	      {
+	          $.each(data, function (index, data)
+	          {	
+	            $("#"+l+"").append("<a>"+data.scientificName+"<br/><br/></a>"); 
+	            
+	           
+	          }) 
+
+	      })
+			l++;	
 	      
 	  	})
 	}};

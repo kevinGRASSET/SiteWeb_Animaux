@@ -14,16 +14,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
+        
       </div>
       <div class="row">
 
@@ -36,25 +27,9 @@
           <li class="tab "><a href="#test3">AFRIQUE</a></li>
           <li class="tab disabled"><a href="#t"></a></li>
           <li class="tab "><a href="#test4">OCEANIE</a></li>
+          <li class="tab disabled"><a href="#t"></a></li>
+          <li class="tab "><a href="#test5">AMERIQUE</a></li>
 
-
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-
-          <li class="tab "><a href="#test5">AMERIQUE DU NORD</a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab "><a href="#test6">AMERIQUE DU SUD</a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab "><a href="#test7">ANTARCTIQUE</a></li>
-          <li class="tab disabled"><a href="#t"></a></li>
-          <li class="tab "><a href="#test8">ARCTIQUE</a></li>
 
         </ul>
       </div>
@@ -81,13 +56,19 @@
 
 
     <div id="test3" class="col s12">
-    <div class="row" id="afrique">
+      <div class="row" id="afrique">
           <div class="col l12"></div>
       </div>
     </div>
 
     <div id="test4" class="col s12">
-    <div class="row" id="oceania">
+      <div class="row" id="oceania">
+          <div class="col l12"></div>
+      </div>
+    </div>
+
+    <div id="test5" class="col s12">
+      <div class="row" id="america">
           <div class="col l12"></div>
       </div>
     </div>
@@ -157,6 +138,7 @@
         
       });
       </script>
+
       <script>
       $(document).ready(function()
       {
@@ -167,6 +149,22 @@
             $.each(json, function(key, val)
             {
                 $("#oceania").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");i++;   
+            })         
+          })
+        
+      });
+      </script>
+
+      <script>
+      $(document).ready(function()
+      {
+          var i = 171;
+           $.get( "https://restcountries.eu/rest/v2/region/Americas", function(json)
+            {
+            
+            $.each(json, function(key, val)
+            {
+                $("#america").append("<div class=card horizontal><div class=card-stacked><div class=card-content><p>"+val.name+"</p></div><div class=card-action id="+i+"><ul id="+i+"></ul></div></div></div></div>");i++;   
             })         
           })
         
