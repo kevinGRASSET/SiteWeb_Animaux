@@ -8,8 +8,6 @@ var tabEurope2 = new Array ();
 
 var m = 0;
 
-
-
 		$.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
             {
             	
@@ -271,7 +269,9 @@ function TabEurope2(k) {
 	      
 	  	})
 			
-	}};
+	}
+
+};
 
 
 
