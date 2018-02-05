@@ -4,7 +4,11 @@ var tabafrique = new Array ();
 var taboceania = new Array ();
 var tabamerica = new Array ();
 
+var tabEurope2 = new Array ();
+
 var m = 0;
+
+
 
 		$.get( "https://restcountries.eu/rest/v2/regionalbloc/eu", function(json)
             {
@@ -20,8 +24,14 @@ var m = 0;
 	            })
 
 	        TabEurope();
+	        TabEurope2();
+	        
 
 	        console.log(tabEurope.length);
+	        console.log(tabEurope2);
+	        console.log(tabEurope);
+	        console.log(tabEurope2.length);
+	      
 
 
           	});
@@ -240,6 +250,30 @@ function TabAmerica(k) {
 	      
 	  	})
 	}};
+
+function TabEurope2(k) {
+
+	for (var i = 0; i < tabEurope.length; i++) 
+	{
+		$.get( "http://api.gbif.org/v1/occurrence/search?species=animalia&country="+tabEurope[i]+"", function(json)
+	  	{ 
+	  		
+	      $.each(json, function(key, data)
+	            {
+
+	            	 $.each(data, function (index, data)
+			          {	
+			               tabEurope2[m] = ""+data.key+"";
+			               m++;
+			            
+			          }) 
+	            })
+	      
+	  	})
+			
+	}};
+
+
 
 			
 
